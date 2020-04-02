@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+		<script src="./js/script.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="container"  align="center">
+			<div class="animal_title">Cửa hàng OD-Animal</div>
+			<div class="animal_list">
+				
+			</div>	
+		</div>
+		<div class="popup">
+			bạn có chắc chắn muốn mua ?
+			<div class="buttons">
+				<div id="popupYes" class="button yes">Có</div>
+				<div id="popupNo" class="button no">Không</div>
+			</div>
+		</div>
+		<script>
+		$(document).mousedown(function (e) {
+			if (e.which == 3) {
+				$('.animal_list').empty();
+				$('.popup').fadeOut(100);
+				$('.container').fadeOut(100);
+				$.post('http://od_rideanimal/NUIFocusOff');
+			}
+		});
+		</script>
+	</body>
+</html>
